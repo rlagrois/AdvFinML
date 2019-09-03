@@ -1,0 +1,37 @@
+Xavier, uniform +- 1.5 (hid in), normal std 1.5 (hid), normal .5 (out)
+
+
+RMSprop .0001
+MSE
+2 epochs
+
+CNN_1d(
+  (cnn): Sequential(
+    (conv-1): Conv1d(1, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel1): LeakyReLU(negative_slope=0.1)
+    (bn-1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv-2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel2): LeakyReLU(negative_slope=0.1)
+    (bn-2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv-3): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel3): LeakyReLU(negative_slope=0.1)
+    (bn-3): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv-4): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel4): LeakyReLU(negative_slope=0.1)
+    (bn-4): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv-5): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel5): LeakyReLU(negative_slope=0.1)
+    (bn-5): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv-6): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel6): LeakyReLU(negative_slope=0.1)
+    (bn-6): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (mpool): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (reg): Sequential(
+    (FF-in): Linear(in_features=1920, out_features=1000, bias=True)
+    (in-lrel): LeakyReLU(negative_slope=0.1)
+    (hid-1): Linear(in_features=1000, out_features=1000, bias=True)
+    (h-lrel-1): LeakyReLU(negative_slope=0.1)
+    (out): Linear(in_features=1000, out_features=62, bias=True)
+  )
+)
