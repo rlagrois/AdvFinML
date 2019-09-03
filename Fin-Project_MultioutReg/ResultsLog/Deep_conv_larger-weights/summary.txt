@@ -5,6 +5,8 @@ RMSprop .0001
 MSE
 2 epochs
 
+Epoch 2/2, Training Loss: 1.016, Testing Loss: 1.202
+
 CNN_1d(
   (cnn): Sequential(
     (conv-1): Conv1d(1, 32, kernel_size=(3,), stride=(1,), padding=(1,))
