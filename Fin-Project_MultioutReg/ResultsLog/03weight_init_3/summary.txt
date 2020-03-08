@@ -1,0 +1,33 @@
+Xavier, uniform +/- 1.01, normal on the last hidden layer with std=1, and normal on the output with std=0.1
+
+MSE
+RMS Prop .0001
+40 epochs
+
+
+CNN_1d(
+  (cnn): Sequential(
+    (conv-1): Conv1d(1, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel1): LeakyReLU(negative_slope=0.1)
+    (conv-2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel2): LeakyReLU(negative_slope=0.1)
+    (conv-3): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (lrel3): LeakyReLU(negative_slope=0.1)
+    (mpool): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (reg): Sequential(
+    (FF-in): Linear(in_features=1920, out_features=1000, bias=True)
+    (in-lrel): LeakyReLU(negative_slope=0.1)
+    (hid-1): Linear(in_features=1000, out_features=1000, bias=True)
+    (h-lrel-1): LeakyReLU(negative_slope=0.1)
+    (hid-2): Linear(in_features=1000, out_features=1000, bias=True)
+    (h-lrel-2): LeakyReLU(negative_slope=0.1)
+    (hid-3): Linear(in_features=1000, out_features=1000, bias=True)
+    (h-lrel-3): LeakyReLU(negative_slope=0.1)
+    (hid-4): Linear(in_features=1000, out_features=1000, bias=True)
+    (h-lrel-4): LeakyReLU(negative_slope=0.1)
+    (hid-5): Linear(in_features=1000, out_features=1000, bias=True)
+    (h-lrel-5): LeakyReLU(negative_slope=0.1)
+    (out): Linear(in_features=1000, out_features=62, bias=True)
+  )
+)
